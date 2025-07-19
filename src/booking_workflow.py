@@ -845,9 +845,9 @@ class BookingWorkflow:
             
             # Use the API service to create the booking
             api_response = self.salon.book_appointment(booking_request)
-            
+            self.logger.debug(f"API Response: {api_response}")
             # Check if the response indicates success
-            if api_response and api_response.get("bookingCode", False) == True:  # Success if no explicit failure
+            if api_response and "bookingCode" in api_response:  # Success if no explicit failure
                 # Log successful response
                 self.logger.info(f"Booking API Response: {json.dumps(api_response)}")
                 

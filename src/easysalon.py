@@ -46,5 +46,5 @@ class Easysalon:
 
         response = self.api_service._post("booking", data=payload)
 
-        print(f"Booking API Request Payload: {payload}")
+        print(f"Booking API Request Payload: {payload} -- {response}")
         return response
