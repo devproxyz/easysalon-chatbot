@@ -1,0 +1,604 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "category": "booking",
+      "english": "How do I book an appointment for a haircut?",
+      "vietnamese": "Làm sao để đặt lịch cắt tóc?"
+    },
+    {
+      "id": 2,
+      "category": "pricing",
+      "english": "What are your prices for hair coloring?",
+      "vietnamese": "Giá nhuộm tóc ở đây bao nhiêu?"
+    },
+    {
+      "id": 3,
+      "category": "services",
+      "english": "Do you offer hair styling services?",
+      "vietnamese": "Salon có dịch vụ tạo kiểu tóc không?"
+    },
+    {
+      "id": 4,
+      "category": "location",
+      "english": "Where is your salon located?",
+      "vietnamese": "Salon ở đâu vậy?"
+    },
+    {
+      "id": 5,
+      "category": "hours",
+      "english": "What are your opening hours?",
+      "vietnamese": "Giờ mở cửa của salon là bao giờ?"
+    },
+    {
+      "id": 6,
+      "category": "consultation",
+      "english": "Can I get a hair consultation before cutting?",
+      "vietnamese": "Tôi có thể được tư vấn trước khi cắt tóc không?"
+    },
+    {
+      "id": 7,
+      "category": "treatments",
+      "english": "Do you provide hair treatment services?",
+      "vietnamese": "Salon có dịch vụ chăm sóc tóc không?"
+    },
+    {
+      "id": 8,
+      "category": "facial",
+      "english": "What facial treatments do you offer?",
+      "vietnamese": "Salon có những dịch vụ chăm sóc da mặt nào?"
+    },
+    {
+      "id": 9,
+      "category": "manicure",
+      "english": "Do you do manicures and pedicures?",
+      "vietnamese": "Salon có làm nail tay và chân không?"
+    },
+    {
+      "id": 10,
+      "category": "wedding",
+      "english": "Do you offer bridal makeup services?",
+      "vietnamese": "Salon có dịch vụ trang điểm cô dâu không?"
+    },
+    {
+      "id": 11,
+      "category": "hair_types",
+      "english": "What's the best haircut for my face shape?",
+      "vietnamese": "Kiểu tóc nào phù hợp với khuôn mặt của tôi?"
+    },
+    {
+      "id": 12,
+      "category": "coloring",
+      "english": "Can you help me choose a hair color?",
+      "vietnamese": "Bạn có thể giúp tôi chọn màu tóc không?"
+    },
+    {
+      "id": 13,
+      "category": "booking",
+      "english": "Can I reschedule my appointment?",
+      "vietnamese": "Tôi có thể đổi lịch hẹn không?"
+    },
+    {
+      "id": 14,
+      "category": "payment",
+      "english": "What payment methods do you accept?",
+      "vietnamese": "Salon nhận những hình thức thanh toán nào?"
+    },
+    {
+      "id": 15,
+      "category": "products",
+      "english": "What hair products do you use?",
+      "vietnamese": "Salon sử dụng sản phẩm tóc gì?"
+    },
+    {
+      "id": 16,
+      "category": "duration",
+      "english": "How long does a haircut take?",
+      "vietnamese": "Cắt tóc mất bao lâu?"
+    },
+    {
+      "id": 17,
+      "category": "staff",
+      "english": "Can I request a specific stylist?",
+      "vietnamese": "Tôi có thể chọn thợ cắt tóc cụ thể không?"
+    },
+    {
+      "id": 18,
+      "category": "perms",
+      "english": "Do you offer hair perming services?",
+      "vietnamese": "Salon có dịch vụ uốn tóc không?"
+    },
+    {
+      "id": 19,
+      "category": "straightening",
+      "english": "Can you straighten my curly hair?",
+      "vietnamese": "Salon có thể duỗi thẳng tóc xoăn không?"
+    },
+    {
+      "id": 20,
+      "category": "eyebrows",
+      "english": "Do you shape eyebrows?",
+      "vietnamese": "Salon có dịch vụ tỉa lông mày không?"
+    },
+    {
+      "id": 21,
+      "category": "waxing",
+      "english": "What waxing services do you provide?",
+      "vietnamese": "Salon có những dịch vụ tẩy lông nào?"
+    },
+    {
+      "id": 22,
+      "category": "massage",
+      "english": "Do you offer head and shoulder massage?",
+      "vietnamese": "Salon có dịch vụ massage đầu và vai không?"
+    },
+    {
+      "id": 23,
+      "category": "packages",
+      "english": "Do you have any package deals?",
+      "vietnamese": "Salon có gói dịch vụ combo nào không?"
+    },
+    {
+      "id": 24,
+      "category": "promotions",
+      "english": "Are there any current promotions?",
+      "vietnamese": "Hiện tại có chương trình khuyến mãi nào không?"
+    },
+    {
+      "id": 25,
+      "category": "first_time",
+      "english": "Do you offer discounts for first-time customers?",
+      "vietnamese": "Có giảm giá cho khách hàng lần đầu không?"
+    },
+    {
+      "id": 26,
+      "category": "membership",
+      "english": "Do you have a loyalty program?",
+      "vietnamese": "Salon có chương trình khách hàng thân thiết không?"
+    },
+    {
+      "id": 27,
+      "category": "cancellation",
+      "english": "What's your cancellation policy?",
+      "vietnamese": "Chính sách hủy lịch hẹn như thế nào?"
+    },
+    {
+      "id": 28,
+      "category": "walk_in",
+      "english": "Do you accept walk-in customers?",
+      "vietnamese": "Salon có nhận khách đến trực tiếp không?"
+    },
+    {
+      "id": 29,
+      "category": "parking",
+      "english": "Is there parking available?",
+      "vietnamese": "Có chỗ đậu xe không?"
+    },
+    {
+      "id": 30,
+      "category": "contact",
+      "english": "What's your phone number?",
+      "vietnamese": "Số điện thoại của salon là gì?"
+    },
+    {
+      "id": 31,
+      "category": "highlights",
+      "english": "Do you do hair highlights?",
+      "vietnamese": "Salon có làm tóc highlight không?"
+    },
+    {
+      "id": 32,
+      "category": "balayage",
+      "english": "Can you do balayage hair coloring?",
+      "vietnamese": "Salon có thể làm nhuộm tóc balayage không?"
+    },
+    {
+      "id": 33,
+      "category": "extensions",
+      "english": "Do you offer hair extensions?",
+      "vietnamese": "Salon có dịch vụ nối tóc không?"
+    },
+    {
+      "id": 34,
+      "category": "damage",
+      "english": "Can you help repair damaged hair?",
+      "vietnamese": "Salon có thể giúp phục hồi tóc hư tổn không?"
+    },
+    {
+      "id": 35,
+      "category": "consultation",
+      "english": "How much does a hair consultation cost?",
+      "vietnamese": "Tư vấn tóc có tính phí không?"
+    },
+    {
+      "id": 36,
+      "category": "special_occasions",
+      "english": "Can you style my hair for a special event?",
+      "vietnamese": "Salon có thể tạo kiểu tóc cho sự kiện đặc biệt không?"
+    },
+    {
+      "id": 37,
+      "category": "children",
+      "english": "Do you cut children's hair?",
+      "vietnamese": "Salon có cắt tóc cho trẻ em không?"
+    },
+    {
+      "id": 38,
+      "category": "men_services",
+      "english": "What services do you offer for men?",
+      "vietnamese": "Salon có những dịch vụ gì cho nam giới?"
+    },
+    {
+      "id": 39,
+      "category": "beard",
+      "english": "Do you trim beards and mustaches?",
+      "vietnamese": "Salon có dịch vụ cắt râu không?"
+    },
+    {
+      "id": 40,
+      "category": "skincare",
+      "english": "What skincare treatments do you offer?",
+      "vietnamese": "Salon có những liệu trình chăm sóc da nào?"
+    },
+    {
+      "id": 41,
+      "category": "acne",
+      "english": "Do you treat acne problems?",
+      "vietnamese": "Salon có điều trị mụn không?"
+    },
+    {
+      "id": 42,
+      "category": "anti_aging",
+      "english": "Do you have anti-aging treatments?",
+      "vietnamese": "Salon có liệu trình chống lão hóa không?"
+    },
+    {
+      "id": 43,
+      "category": "equipment",
+      "english": "What kind of equipment do you use?",
+      "vietnamese": "Salon sử dụng thiết bị gì?"
+    },
+    {
+      "id": 44,
+      "category": "hygiene",
+      "english": "How do you maintain hygiene standards?",
+      "vietnamese": "Salon đảm bảo vệ sinh như thế nào?"
+    },
+    {
+      "id": 45,
+      "category": "experience",
+      "english": "How experienced are your stylists?",
+      "vietnamese": "Thợ cắt tóc ở đây có kinh nghiệm bao lâu?"
+    },
+    {
+      "id": 46,
+      "category": "training",
+      "english": "Are your staff professionally trained?",
+      "vietnamese": "Nhân viên có được đào tạo chuyên nghiệp không?"
+    },
+    {
+      "id": 47,
+      "category": "certificates",
+      "english": "Do you have professional certifications?",
+      "vietnamese": "Salon có chứng chỉ hành nghề không?"
+    },
+    {
+      "id": 48,
+      "category": "reviews",
+      "english": "Can I see customer reviews?",
+      "vietnamese": "Tôi có thể xem đánh giá của khách hàng không?"
+    },
+    {
+      "id": 49,
+      "category": "portfolio",
+      "english": "Can I see examples of your work?",
+      "vietnamese": "Tôi có thể xem mẫu công việc của salon không?"
+    },
+    {
+      "id": 50,
+      "category": "trends",
+      "english": "What are the latest hair trends?",
+      "vietnamese": "Xu hướng tóc mới nhất là gì?"
+    },
+    {
+      "id": 51,
+      "category": "color_removal",
+      "english": "Can you remove hair color?",
+      "vietnamese": "Salon có thể tẩy màu tóc không?"
+    },
+    {
+      "id": 52,
+      "category": "bleaching",
+      "english": "Do you offer hair bleaching services?",
+      "vietnamese": "Salon có dịch vụ tẩy trắng tóc không?"
+    },
+    {
+      "id": 53,
+      "category": "deep_conditioning",
+      "english": "Do you do deep conditioning treatments?",
+      "vietnamese": "Salon có liệu trình dưỡng tóc sâu không?"
+    },
+    {
+      "id": 54,
+      "category": "scalp_treatment",
+      "english": "Do you treat scalp problems?",
+      "vietnamese": "Salon có điều trị vấn đề da đầu không?"
+    },
+    {
+      "id": 55,
+      "category": "keratin",
+      "english": "Do you offer keratin treatments?",
+      "vietnamese": "Salon có liệu trình keratin không?"
+    },
+    {
+      "id": 56,
+      "category": "organic",
+      "english": "Do you use organic products?",
+      "vietnamese": "Salon có sử dụng sản phẩm hữu cơ không?"
+    },
+    {
+      "id": 57,
+      "category": "allergies",
+      "english": "Do you have products for sensitive skin?",
+      "vietnamese": "Salon có sản phẩm cho da nhạy cảm không?"
+    },
+    {
+      "id": 58,
+      "category": "patch_test",
+      "english": "Do you do patch tests before coloring?",
+      "vietnamese": "Salon có test da trước khi nhuộm không?"
+    },
+    {
+      "id": 59,
+      "category": "maintenance",
+      "english": "How often should I get a haircut?",
+      "vietnamese": "Tôi nên cắt tóc bao lâu một lần?"
+    },
+    {
+      "id": 60,
+      "category": "home_care",
+      "english": "What products should I use at home?",
+      "vietnamese": "Tôi nên dùng sản phẩm gì ở nhà?"
+    },
+    {
+      "id": 61,
+      "category": "styling_tips",
+      "english": "Can you teach me how to style my hair?",
+      "vietnamese": "Salon có thể dạy tôi cách tạo kiểu tóc không?"
+    },
+    {
+      "id": 62,
+      "category": "hair_loss",
+      "english": "Do you have treatments for hair loss?",
+      "vietnamese": "Salon có liệu trình chống rụng tóc không?"
+    },
+    {
+      "id": 63,
+      "category": "dandruff",
+      "english": "Can you help with dandruff problems?",
+      "vietnamese": "Salon có thể giúp trị gàu không?"
+    },
+    {
+      "id": 64,
+      "category": "oily_hair",
+      "english": "What do you recommend for oily hair?",
+      "vietnamese": "Salon khuyên gì cho tóc dầu?"
+    },
+    {
+      "id": 65,
+      "category": "dry_hair",
+      "english": "How can I treat my dry hair?",
+      "vietnamese": "Làm sao để trị tóc khô?"
+    },
+    {
+      "id": 66,
+      "category": "frizzy_hair",
+      "english": "What's good for frizzy hair?",
+      "vietnamese": "Dùng gì cho tóc xù?"
+    },
+    {
+      "id": 67,
+      "category": "thin_hair",
+      "english": "How can I make my thin hair look fuller?",
+      "vietnamese": "Làm sao để tóc mỏng trông dày hơn?"
+    },
+    {
+      "id": 68,
+      "category": "thick_hair",
+      "english": "How do you manage thick hair?",
+      "vietnamese": "Làm sao để xử lý tóc dày?"
+    },
+    {
+      "id": 69,
+      "category": "curly_hair",
+      "english": "What's the best cut for curly hair?",
+      "vietnamese": "Kiểu cắt nào tốt nhất cho tóc xoăn?"
+    },
+    {
+      "id": 70,
+      "category": "straight_hair",
+      "english": "How can I add volume to straight hair?",
+      "vietnamese": "Làm sao để tóc thẳng có độ phồng?"
+    },
+    {
+      "id": 71,
+      "category": "gray_hair",
+      "english": "What are my options for covering gray hair?",
+      "vietnamese": "Có cách nào để che tóc bạc không?"
+    },
+    {
+      "id": 72,
+      "category": "wedding_package",
+      "english": "Do you offer wedding party packages?",
+      "vietnamese": "Salon có gói dịch vụ cho tiệc cưới không?"
+    },
+    {
+      "id": 73,
+      "category": "group_booking",
+      "english": "Can I book for a group of people?",
+      "vietnamese": "Tôi có thể đặt lịch cho cả nhóm không?"
+    },
+    {
+      "id": 74,
+      "category": "gift_cards",
+      "english": "Do you sell gift cards?",
+      "vietnamese": "Salon có bán thẻ quà tặng không?"
+    },
+    {
+      "id": 75,
+      "category": "online_booking",
+      "english": "Can I book online?",
+      "vietnamese": "Tôi có thể đặt lịch online không?"
+    },
+    {
+      "id": 76,
+      "category": "mobile_app",
+      "english": "Do you have a mobile app?",
+      "vietnamese": "Salon có ứng dụng di động không?"
+    },
+    {
+      "id": 77,
+      "category": "social_media",
+      "english": "Are you on social media?",
+      "vietnamese": "Salon có trang mạng xã hội không?"
+    },
+    {
+      "id": 78,
+      "category": "newsletter",
+      "english": "Can I subscribe to your newsletter?",
+      "vietnamese": "Tôi có thể đăng ký nhận tin không?"
+    },
+    {
+      "id": 79,
+      "category": "consultation_fee",
+      "english": "Is there a consultation fee?",
+      "vietnamese": "Có phí tư vấn không?"
+    },
+    {
+      "id": 80,
+      "category": "touch_up",
+      "english": "Do you offer touch-up services?",
+      "vietnamese": "Salon có dịch vụ chạm lại không?"
+    },
+    {
+      "id": 81,
+      "category": "color_matching",
+      "english": "Can you match my natural hair color?",
+      "vietnamese": "Salon có thể phối màu giống tóc tự nhiên không?"
+    },
+    {
+      "id": 82,
+      "category": "ammonia_free",
+      "english": "Do you use ammonia-free hair dye?",
+      "vietnamese": "Salon có dùng thuốc nhuộm không chứa amoniac không?"
+    },
+    {
+      "id": 83,
+      "category": "vegan_products",
+      "english": "Do you have vegan hair products?",
+      "vietnamese": "Salon có sản phẩm thuần chay không?"
+    },
+    {
+      "id": 84,
+      "category": "pregnancy",
+      "english": "What services are safe during pregnancy?",
+      "vietnamese": "Dịch vụ nào an toàn khi mang thai?"
+    },
+    {
+      "id": 85,
+      "category": "senior_discount",
+      "english": "Do you offer senior discounts?",
+      "vietnamese": "Có giảm giá cho người cao tuổi không?"
+    },
+    {
+      "id": 86,
+      "category": "student_discount",
+      "english": "Is there a student discount?",
+      "vietnamese": "Có giảm giá cho sinh viên không?"
+    },
+    {
+      "id": 87,
+      "category": "referral",
+      "english": "Do you have a referral program?",
+      "vietnamese": "Salon có chương trình giới thiệu không?"
+    },
+    {
+      "id": 88,
+      "category": "insurance",
+      "english": "Do you accept health insurance?",
+      "vietnamese": "Salon có nhận bảo hiểm y tế không?"
+    },
+    {
+      "id": 89,
+      "category": "emergency",
+      "english": "Do you handle hair emergencies?",
+      "vietnamese": "Salon có xử lý tình huống khẩn cấp về tóc không?"
+    },
+    {
+      "id": 90,
+      "category": "color_correction",
+      "english": "Can you fix a bad hair color?",
+      "vietnamese": "Salon có thể sửa màu tóc hỏng không?"
+    },
+    {
+      "id": 91,
+      "category": "hair_quiz",
+      "english": "Can you help me find my hair type?",
+      "vietnamese": "Salon có thể giúp tôi xác định loại tóc không?"
+    },
+    {
+      "id": 92,
+      "category": "seasonal",
+      "english": "Do you have seasonal hair care tips?",
+      "vietnamese": "Salon có lời khuyên chăm sóc tóc theo mùa không?"
+    },
+    {
+      "id": 93,
+      "category": "before_after",
+      "english": "Can I see before and after photos?",
+      "vietnamese": "Tôi có thể xem ảnh trước và sau không?"
+    },
+    {
+      "id": 94,
+      "category": "virtual_consultation",
+      "english": "Do you offer virtual consultations?",
+      "vietnamese": "Salon có tư vấn trực tuyến không?"
+    },
+    {
+      "id": 95,
+      "category": "hair_care_routine",
+      "english": "What's a good daily hair care routine?",
+      "vietnamese": "Quy trình chăm sóc tóc hàng ngày tốt là gì?"
+    },
+    {
+      "id": 96,
+      "category": "professional_vs_drugstore",
+      "english": "What's the difference between salon and drugstore products?",
+      "vietnamese": "Sự khác biệt giữa sản phẩm salon và siêu thị là gì?"
+    },
+    {
+      "id": 97,
+      "category": "heat_protection",
+      "english": "Do you recommend heat protection products?",
+      "vietnamese": "Salon có khuyên dùng sản phẩm chống nhiệt không?"
+    },
+    {
+      "id": 98,
+      "category": "hair_masks",
+      "english": "What hair masks do you recommend?",
+      "vietnamese": "Salon khuyên dùng mặt nạ tóc nào?"
+    },
+    {
+      "id": 99,
+      "category": "scalp_massage",
+      "english": "Do you include scalp massage with services?",
+      "vietnamese": "Dịch vụ có bao gồm massage da đầu không?"
+    },
+    {
+      "id": 100,
+      "category": "appointment_reminder",
+      "english": "Do you send appointment reminders?",
+      "vietnamese": "Salon có gửi nhắc lịch hẹn không?"
+    }
+  ]
+}

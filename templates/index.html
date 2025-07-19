@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasySalon - Beauty Chatbot Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --chat-bg: rgba(255, 255, 255, 0.95);
+            --message-user: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --message-bot: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            --border-radius: 20px;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 90vh;
+            background: var(--chat-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .chat-header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .chat-header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            max-width: 100%;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message-content {
+            max-width: 75%;
+            padding: 15px 22px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            line-height: 1.5;
+        }
+
+        .message.user .message-content {
+            background: var(--message-user);
+            color: white;
+            margin-left: auto;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e9ecef;
+        }
+
+        .message.bot .message-content pre {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin: 8px 0;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+        }
+
+        .message.bot .message-content strong {
+            color: #667eea;
+        }
+
+        .suggestions-container {
+            padding: 20px 25px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+            display: none;
+        }
+
+        .suggestions-container.show {
+            display: block;
+        }
+
+        .suggestions-title {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .suggestion-bubbles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .suggestion-bubble {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .suggestion-bubble:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .suggestion-bubble:active {
+            transform: translateY(0);
+        }
+
+        .chat-input-container {
+            padding: 25px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .input-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-control {
+            border-radius: 25px;
+            border: 2px solid #e9ecef;
+            padding: 15px 55px 15px 25px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            flex: 1;
+            outline: none;
+            min-height: 50px;
+        }
+
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background: white;
+            outline: none;
+        }
+
+        .send-button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-gradient);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            font-size: 1.1rem;
+        }
+
+        /* Ensure button stays visible during input focus */
+        .input-group:focus-within .send-button {
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        /* Additional safeguards for button visibility */
+        .send-button {
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+
+        .send-button:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .send-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: translateY(-50%);
+        }
+
+        .send-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 10px 20px;
+            font-style: italic;
+            color: #6c757d;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .typing-indicator.show {
+            display: block;
+        }
+
+        .loading-dots {
+            display: inline-block;
+        }
+
+        .loading-dots::after {
+            content: '...';
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { content: ''; }
+            25% { content: '.'; }
+            50% { content: '..'; }
+            75% { content: '...'; }
+            100% { content: ''; }
+        }
+
+        .clear-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary-gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .clear-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .chat-container {
+                height: 90vh;
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            .chat-header {
+                padding: 15px;
+            }
+
+            .chat-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .chat-messages {
+                padding: 20px;
+            }
+
+            .message-content {
+                max-width: 90%;
+                padding: 12px 18px;
+            }
+
+            .suggestion-bubbles {
+                gap: 6px;
+            }
+
+            .suggestion-bubble {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .chat-input-container {
+                padding: 20px;
+            }
+
+            .form-control {
+                padding: 12px 50px 12px 20px;
+                font-size: 1rem;
+                min-height: 45px;
+            }
+
+            .send-button {
+                width: 40px;
+                height: 40px;
+                right: 8px;
+                z-index: 10;
+                font-size: 1rem;
+            }
+
+            .clear-button {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Scrollbar Styling */
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 10px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Animation for new messages */
+        .message {
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1><i class="fas fa-cut"></i> EasySalon Assistant</h1>
+            <p>Your personal beauty consultation and appointment booking assistant</p>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be dynamically added here -->
+        </div>
+
+        <div class="suggestions-container" id="suggestionsContainer">
+            <div class="suggestions-title" id="suggestionsTitle">Quick questions you can ask:</div>
+            <div class="suggestion-bubbles" id="suggestionBubbles">
+                <!-- Suggestions will be dynamically added here -->
+            </div>
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator">
+            EasySalon Assistant is typing<span class="loading-dots"></span>
+        </div>
+
+        <div class="chat-input-container">
+            <div class="input-group">
+                <input type="text" class="form-control" id="messageInput" placeholder="Ask me about beauty services, appointments, or get beauty advice..." maxlength="500">
+                <button class="send-button" id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button class="clear-button" id="clearButton" title="Clear conversation">
+        <i class="fas fa-trash"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        class ChatApp {
+            constructor() {
+                this.socket = io();
+                this.messageInput = document.getElementById('messageInput');
+                this.sendButton = document.getElementById('sendButton');
+                this.clearButton = document.getElementById('clearButton');
+                this.chatMessages = document.getElementById('chatMessages');
+                this.typingIndicator = document.getElementById('typingIndicator');
+                this.suggestionsContainer = document.getElementById('suggestionsContainer');
+                this.suggestionBubbles = document.getElementById('suggestionBubbles');
+                self.suggestionsTitle = this.suggestionsContainer.querySelector('.suggestions-title');
+                
+                this.initializeEventListeners();
+                this.initializeSocketListeners();
+                this.showInitialSuggestions();
+            }
+
+            initializeEventListeners() {
+                this.sendButton.addEventListener('click', () => this.sendMessage());
+                this.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.sendMessage();
+                    }
+                });
+                this.clearButton.addEventListener('click', () => this.clearConversation());
+                
+                // Auto-resize and character counter
+                this.messageInput.addEventListener('input', () => {
+                    this.updateSendButton();
+                });
+                
+                // Ensure button stays visible during focus
+                this.messageInput.addEventListener('focus', () => {
+                    this.sendButton.style.display = 'flex';
+                    this.sendButton.style.visibility = 'visible';
+                });
+                
+                this.messageInput.addEventListener('blur', () => {
+                    this.sendButton.style.display = 'flex';
+                    this.sendButton.style.visibility = 'visible';
+                });
+            }
+
+            initializeSocketListeners() {
+                this.socket.on('connect', () => {
+                    console.log('Connected to server');
+                });
+
+                this.socket.on('message', (data) => {
+                    this.hideTypingIndicator();
+                    
+                    // Simply add the bot message without trying to extract suggestions
+                    // Suggestions will be handled separately via the 'suggestions' event
+                    this.addMessage(data.response, 'bot');
+                });
+
+                this.socket.on('suggestions', (data) => {
+                    if (data.error) {
+                        console.error('Error getting suggestions:', data.error);
+                        this.hideSuggestions();
+                    } else if (data.hide || !data.suggestions || data.suggestions.length === 0) {
+                        // Hide suggestions if explicitly told to hide or if no suggestions available
+                        console.log('No suggestions available from Qdrant - hiding suggestions container');
+                        this.hideSuggestions();
+                    } else {
+                        console.log('Received suggestions:', data.suggestions);
+                        this.displaySuggestions(data.suggestions);
+                        
+                        // Update suggestions title based on context
+                        if (data.based_on) {
+                            this.updateSuggestionsTitle('Related questions you might ask:');
+                        }
+                    }
+                });
+
+                // Socket event for updating suggestions title contextually
+                this.socket.on('suggestionsTitle', (data) => {
+                    if (data.title) {
+                        this.updateSuggestionsTitle(data.title);
+                    }
+                });
+
+                this.socket.on('conversation_cleared', (data) => {
+                    if (data.status === 'success') {
+                        this.chatMessages.innerHTML = '';
+                        this.showInitialSuggestions();
+                    }
+                });
+            }
+
+            sendMessage() {
+                const message = this.messageInput.value.trim();
+                if (message) {
+                    this.addMessage(message, 'user');
+                    this.socket.emit('chat_message', { message: message });
+                    this.messageInput.value = '';
+                    this.updateSendButton();
+                    this.showTypingIndicator();
+                    this.hideSuggestions();
+                }
+            }
+
+            addMessage(message, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                
+                const messageContent = document.createElement('div');
+                messageContent.className = 'message-content';
+                
+                if (sender === 'bot') {
+                    // Convert markdown-like formatting to HTML
+                    const formattedMessage = this.formatMessage(message);
+                    messageContent.innerHTML = formattedMessage;
+                } else {
+                    messageContent.textContent = message;
+                }
+                
+                messageDiv.appendChild(messageContent);
+                this.chatMessages.appendChild(messageDiv);
+                this.scrollToBottom();
+            }
+
+            formatMessage(message) {
+                // Basic markdown-like formatting
+                return message
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/`(.*?)`/g, '<code>$1</code>')
+                    .replace(/\n/g, '<br>');
+            }
+
+            showTypingIndicator() {
+                this.typingIndicator.classList.add('show');
+            }
+
+            hideTypingIndicator() {
+                this.typingIndicator.classList.remove('show');
+            }
+
+            updateSendButton() {
+                const hasText = this.messageInput.value.trim().length > 0;
+                this.sendButton.disabled = !hasText;
+                // Ensure button stays visible
+                this.sendButton.style.display = 'flex';
+                this.sendButton.style.visibility = 'visible';
+            }
+
+            clearConversation() {
+                if (confirm('Are you sure you want to clear the conversation?')) {
+                    this.socket.emit('clear_conversation');
+                }
+            }
+
+            scrollToBottom() {
+                this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+            }
+
+            showInitialSuggestions() {
+                // Request initial suggestions from the backend using Qdrant
+                this.socket.emit('get_suggestions', { question: 'beauty salon services consultation' });
+                
+                // If no response from backend after 2 seconds, hide suggestions
+                setTimeout(() => {
+                    if (this.suggestionBubbles.children.length === 0) {
+                        console.log('No initial suggestions available from Qdrant - hiding suggestions');
+                        this.hideSuggestions();
+                    }
+                }, 2000);
+            }
+
+            updateSuggestions() {
+                // Get suggestions from the last user message
+                const messages = this.chatMessages.querySelectorAll('.message.user');
+                const lastUserMessage = messages[messages.length - 1];
+                
+                if (lastUserMessage) {
+                    const lastQuestion = lastUserMessage.textContent.trim();
+                    
+                    // Request suggestions from the backend
+                    this.socket.emit('get_suggestions', { question: lastQuestion });
+                } else {
+                    // Fallback to showing initial suggestions
+                    this.showInitialSuggestions();
+                }
+            }
+
+            displaySuggestions(suggestions) {
+                this.suggestionBubbles.innerHTML = '';
+                
+                // Only display if we have suggestions
+                if (suggestions && suggestions.length > 0) {
+                    suggestions.forEach(suggestion => {
+                        const bubble = document.createElement('button');
+                        bubble.className = 'suggestion-bubble';
+                        bubble.textContent = suggestion;
+                        bubble.onclick = () => this.selectSuggestion(suggestion);
+                        this.suggestionBubbles.appendChild(bubble);
+                    });
+                    
+                    this.showSuggestions();
+                } else {
+                    // Hide suggestions if no data available
+                    this.hideSuggestions();
+                }
+            }
+
+            updateSuggestionsTitle(newTitle) {
+                // Update the suggestions title dynamically based on context
+                if (this.suggestionsTitle) {
+                    this.suggestionsTitle.textContent = newTitle;
+                }
+            }
+
+            selectSuggestion(suggestion) {
+                this.messageInput.value = suggestion;
+                this.messageInput.focus();
+                this.updateSendButton();
+                this.hideSuggestions();
+            }
+
+            showSuggestions() {
+                this.suggestionsContainer.classList.add('show');
+            }
+
+            hideSuggestions() {
+                this.suggestionsContainer.classList.remove('show');
+            }
+        }
+
+        // Initialize the chat app when the DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ChatApp();
+        });
+    </script>
+</body>
+</html>

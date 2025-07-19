@@ -1,0 +1,41 @@
+[
+    {
+        "id": "1",
+        "name": "EasySalon Downtown",
+        "address": "123 Main Street, Downtown District",
+        "phone": "(555) 123-4567",
+        "hours": "Mon-Sat: 9:00 AM - 8:00 PM, Sun: 10:00 AM - 6:00 PM",
+        "services": ["haircut", "coloring", "styling", "manicure", "pedicure", "facial"],
+        "rating": 4.8,
+        "coordinates": {
+            "lat": 40.7128,
+            "lng": -74.0060
+        }
+    },
+    {
+        "id": "2",
+        "name": "EasySalon Uptown",
+        "address": "456 Oak Avenue, Uptown District",
+        "phone": "(555) 234-5678",
+        "hours": "Mon-Sat: 8:00 AM - 9:00 PM, Sun: 10:00 AM - 7:00 PM",
+        "services": ["haircut", "coloring", "styling", "treatment", "massage", "facial"],
+        "rating": 4.9,
+        "coordinates": {
+            "lat": 40.7831,
+            "lng": -73.9712
+        }
+    },
+    {
+        "id": "3",
+        "name": "EasySalon Westside",
+        "address": "789 Pine Road, Westside District",
+        "phone": "(555) 345-6789",
+        "hours": "Mon-Fri: 9:00 AM - 7:00 PM, Sat-Sun: 10:00 AM - 6:00 PM",
+        "services": ["haircut", "coloring", "styling", "highlights", "treatments"],
+        "rating": 4.7,
+        "coordinates": {
+            "lat": 40.7489,
+            "lng": -73.9857
+        }
+    }
+]
